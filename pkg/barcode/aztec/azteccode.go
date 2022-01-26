@@ -5,8 +5,8 @@ import (
 	"image"
 	"image/color"
 
-	"github.com/boombuler/barcode"
-	"github.com/boombuler/barcode/utils"
+	"github.com/ggiox/go-barcode/pkg/barcode"
+	"github.com/ggiox/go-barcode/pkg/barcode/utils"
 )
 
 type aztecCode struct {
