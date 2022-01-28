@@ -7,22 +7,22 @@ import (
 
 type borderedBarcode struct {
 	barcode Barcode
-	width   int
+	size    int
 }
 
 func (bb *borderedBarcode) At(x, y int) color.Color {
 	bounds := bb.barcode.Bounds()
 	w := bounds.Dx()
 	h := bounds.Dy()
-	if x < bb.width || x >= w+bb.width || y < bb.width || y >= h+bb.width {
+	if x < bb.size || x >= w+bb.size || y < bb.size || y >= h+bb.size {
 		return color.White
 	}
-	return bb.barcode.At(x-bb.width, y-bb.width)
+	return bb.barcode.At(x-bb.size, y-bb.size)
 }
 
 func (bb *borderedBarcode) Bounds() image.Rectangle {
 	b := bb.barcode.Bounds()
-	return image.Rect(0, 0, b.Dx()+2*bb.width, b.Dy()+2*bb.width)
+	return image.Rect(0, 0, b.Dx()+2*bb.size, b.Dy()+2*bb.size)
 }
 
 func (bb *borderedBarcode) ColorModel() color.Model {
