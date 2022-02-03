@@ -1,2 +1,2 @@
 # go-barcode
-Toolkit for barcode generation
+The go-barcode package implements a clone QRCode encoder from the https://github.com/boombuler/barcode project licensed under the MIT License
